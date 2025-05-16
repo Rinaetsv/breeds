@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dog Breeds</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+      background-color: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 400px;
+      height: auto;
+      display: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Click a Dog Breed to See the Picture</h1>
+  
+  <button onclick="showDog('pitbull')">Pit Bull</button>
+  <button onclick="showDog('beagle')">Beagle</button>
+  <button onclick="showDog('poodle')">Poodle</button>
+
+  <div>
+    <img id="dogImage" src="" alt="Dog Breed" />
+  </div>
+
+  <script>
+    function showDog(breed) {
+      const image = document.getElementById('dogImage');
+      let url = '';
+
+      if (breed === 'pitbull') {
+        url = 'https://cdn.pixabay.com/photo/2018/02/03/22/12/dog-3123734_1280.jpg';
+      } else if (breed === 'beagle') {
+        url = 'https://cdn.pixabay.com/photo/2016/03/27/21/16/beagle-1284507_1280.jpg';
+      } else if (breed === 'poodle') {
+        url = 'https://cdn.pixabay.com/photo/2017/09/25/13/12/poodle-2785074_1280.jpg';
+      }
+
+      image.src = url;
+      image.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
